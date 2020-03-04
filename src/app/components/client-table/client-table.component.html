@@ -1,0 +1,72 @@
+<!-- Form -->
+
+<mat-card>
+    <mat-card-title>Client</mat-card-title>
+    <mat-card-subtitle>Add or Decrypt a client</mat-card-subtitle>
+
+    <mat-card-content>
+        <form id="add-form" (ngSubmit)="saveClient(f)" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" [(ngModel)]="client.name" id="name" name="name" #name="ngModel" required
+                    class="form-control" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" placeholder="Name">
+
+            </div>
+            <div class="form-group">
+                <label for="account">Account</label>
+                <input type="text" [(ngModel)]="client.account" id="account" name="account" #account="ngModel" required
+                    class="form-control" [ngClass]="{ 'is-invalid': f.submitted && account.invalid }"
+                    placeholder="Account" value="Paulo">
+
+            </div>
+
+            <button mat-raised-button color="primary" type="submit" class="button-encrypt"
+                [disabled]="!client.name || !client.account || hasNumber(client.name)"><i class="material-icons">
+                    enhanced_encryption</i>
+                Encrypt</button>
+
+            <button mat-raised-button color="accent" type="button"
+                [disabled]="!client.name || !client.account || !isEncrypted(client.name) || !isEncrypted(client.account)" (click)="getClient(client.id)">
+                <i class="material-icons">
+                    no_encryption</i>
+                Decrypt</button>
+        </form>
+
+    </mat-card-content>
+</mat-card>
+
+<!-- Table -->
+
+<div class=client-table>
+    <div *ngIf="clients">
+
+        <h5>Clients Encrypted</h5>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="account">
+                <th mat-header-cell *matHeaderCellDef> Account </th>
+                <td mat-cell *matCellDef="let element"> {{element.account}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"></tr>
+
+
+        </table>
+
+    </div>
+    <div *ngIf="!clients">
+        No records found
+    </div>
+
+</div>
