@@ -3,7 +3,7 @@
 ## Description
 This project is an Angular client that encrypt and decrypt a client request.
 
-## Tecnologies 
+## Specs 
 * Angular CLI: 8.3.25;
 * Node: 12.14.0;
 * Angular Material;
