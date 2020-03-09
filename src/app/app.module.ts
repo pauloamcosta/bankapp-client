@@ -14,7 +14,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { ClientTableComponent } from './components/client-table/client-table.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
@@ -35,7 +35,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatTableModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule,MatButtonModule,
+    MatInputModule,
+    MatButtonModule,
     NgbModule,
     FormsModule,
     MatCardModule,

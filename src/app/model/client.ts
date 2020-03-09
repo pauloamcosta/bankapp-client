@@ -3,4 +3,3 @@ export interface Client {
     name: string;
     account: string;
   }
-  
