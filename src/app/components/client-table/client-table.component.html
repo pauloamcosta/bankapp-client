@@ -1,5 +1,3 @@
-<!-- Form -->
-
 <mat-card>
     <mat-card-title>Client</mat-card-title>
     <mat-card-subtitle>Add or Decrypt a client</mat-card-subtitle>
@@ -26,7 +24,8 @@
                 Encrypt</button>
 
             <button mat-raised-button color="accent" type="button"
-                [disabled]="!client.name || !client.account || !isEncrypted(client.name) || !isEncrypted(client.account)" (click)="getClient(client.id)">
+                [disabled]="!client.name || !client.account || !isEncrypted(client.name) || !isEncrypted(client.account)"
+                (click)="getClient(client.id)">
                 <i class="material-icons">
                     no_encryption</i>
                 Decrypt</button>
@@ -34,8 +33,6 @@
 
     </mat-card-content>
 </mat-card>
-
-<!-- Table -->
 
 <div class=client-table>
     <div *ngIf="clients">
@@ -68,5 +65,4 @@
     <div *ngIf="!clients">
         No records found
     </div>
-
 </div>
