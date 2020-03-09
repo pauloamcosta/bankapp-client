@@ -69,10 +69,6 @@ export class ClientTableComponent implements OnInit {
     this.client.account = row.account;
   }
 
-  hasNumber(myString: string) {
-    return /\d/.test(myString);
-  }
-
   isEncrypted(myString: string) {
     return myString.includes('==');
   }
