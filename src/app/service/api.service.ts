@@ -24,8 +24,7 @@ export class ApiService {
 
 
   public getAllClients(): any {
-    const myResponse = this.http.get(this.baseUrl);
-    return myResponse;
+    return this.http.get(this.baseUrl);
   }
 
   getClients(): Observable<Client[]> {
