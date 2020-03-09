@@ -24,7 +24,7 @@
                 Encrypt</button>
 
             <button mat-raised-button color="accent" type="button"
-                [disabled]="!client.name || !client.account || !isEncrypted(client.name) || !isEncrypted(client.account)"
+                [disabled]="!client.name || !client.account"
                 (click)="getClient(client.id)">
                 <i class="material-icons">
                     no_encryption</i>
