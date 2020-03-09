@@ -22,7 +22,6 @@ export class ClientTableComponent implements OnInit {
   }
 
   constructor(
-    private http: HttpClient,
     private apiService: ApiService,
     private snackBar: MatSnackBar) {
   }
@@ -67,14 +66,6 @@ export class ClientTableComponent implements OnInit {
     this.client.id = row.id;
     this.client.name = row.name;
     this.client.account = row.account;
-  }
-
-  hasNumber(myString: string) {
-    return /\d/.test(myString);
-  }
-
-  isEncrypted(myString: string) {
-    return myString.includes('==');
   }
 
 }
